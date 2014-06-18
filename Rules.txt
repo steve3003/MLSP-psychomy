@@ -1,0 +1,44 @@
+Course Project
+ 
+Dear Students, 
+ 
+The supermarket chain PAM did not give us the data we expected. As I anticipated during the last lecture, instead of providing you with the data set for the project I decided to give you a choice of four datasets (all taken from the same website devoted to data mining competitions).
+ 
+These are the four datasets you can choose from:
+ 
+http://www.kaggle.com/c/acquire-valued-shoppers-challenge
+ 
+http://www.kaggle.com/c/seizure-detection
+ 
+http://www.kaggle.com/c/kdd-cup-2014-predicting-excitement-at-donors-choose
+ 
+http://www.kaggle.com/c/mlsp-2014-mri
+ 
+I also opened a thread on the course forum about the project.
+ 
+These are the rules :)
+ 
+all the students interested in working on the course project should send submit their team composition in the thread named “teams”
+you all must decide which problem you think is more interesting or easier :) to tackle. You have until the end of the week to decide (but you can also decide sooner)
+you can *all* work together on the data exploration and preprocessing steps and you should share the results with all the teams on the forum. for instance, if you an attribute is bad say it outright to everybody. You can also decide to split the job team A does visualisation, B does clustering for exploration etc. I repeat everybody should work together in this part. 
+at the same time each team can work on the target task separately.
+ 
+For instance, I know I want to use decision trees, to do that I need to reduce the attributes, I perform some data reduction and I post the result of this step to the forum, but I don’t tell the others what actual DM procedure I will use but the overall knowledge can be helpful to everybody.
+ 
+I don’t plan to put a limit on the size of the team. My feeling is that more than 4-5 people might raise communication issues. But again it is up to you and you can choose to put up one team with all the students if you want.
+ 
+About the data set, the first one resembles the typical characteristic of a data mining task and accordingly is huge :) the one about seizures is quite different from the typical data mining task but interesting as well. I actually had a student working on the same topic the main challenge was preprocessing in that case.
+ 
+Again, feel free to flood the forum with comments etc.
+ 
+The firm deadline for the project is July 8th but I suggest that you do the job in the next two weeks top. 
+ 
+Your submission will consists of
+a submission on the kaggle website (when you submit your team also add myself in the team so that I am updated)
+a ***two pages*** (one sheet of paper) summary of your method and findings.
+ 
+*** Grade
+ 
+The project usually award 5 points but extra points are awarded for well executed or particularly brilliant works.
+ 
+If the submission on the kaggle website reaches the top 3, I will grant the whole team all the 19 points of the second midterm.
