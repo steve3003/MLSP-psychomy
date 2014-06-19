@@ -10,6 +10,7 @@
 # Assumes the file 'test_FNC.csv' is in the current folder.
 # Load test FNC features from file into a data frame variable
 # To change the current working directory use setwd()
+#setwd("~/Documenti/poli/data-mining/MLSP-psychomy/")
 FNC_test = read.csv(file='Test/test_FNC.csv',head=TRUE,sep=",")
 
 # Assumes the file 'test_SBM.csv' is in the current folder.
@@ -29,9 +30,9 @@ library(class)
 library(e1071)
 library(foreign)
 
-FNC_selected = read.arff("train_FNC_attrSelected.arff")
-SBM_selected = read.arff("train_SBM_attrSelected.arff")
-labels = read.csv("train_labels.csv")
+FNC_selected = read.arff("Train/train_FNC_attrSelected.arff")
+SBM_selected = read.arff("Train/train_SBM_attrSelected.arff")
+labels = read.csv("Train/train_labels.csv")
 trainSet = merge(FNC_selected, SBM_selected)
 trainSet = merge(trainSet, labels)
 trainSet = trainSet[-1]
@@ -43,7 +44,7 @@ testSet = testSet[names(trainSet[-18])]
 NBclass = naiveBayes(trainSet[-18], factor(trainSet$Class))
 
 # Running classifier
-scores = predict(NBclass, testSet)
+scores = predict(NBclass, testSet, type = "raw")
 
 
 
