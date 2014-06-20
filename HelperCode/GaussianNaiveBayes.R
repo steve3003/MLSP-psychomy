@@ -30,16 +30,16 @@ library(class)
 library(e1071)
 library(foreign)
 
-trainSet = read.arff("Train/data_continuos.arff")
-labels = read.csv("Train/train_labels.csv")
-trainSet = merge(trainSet, labels)
-trainSet = trainSet[-1]
+trainSet = read.arff("Train/data_continuos_complete-noFNC105.arff")
+#labels = read.csv("Train/train_labels.csv")
+#trainSet = merge(trainSet, labels)
+#trainSet = trainSet[-1]
 
 testSet = merge(FNC_test, SBM_test)
-testSet = testSet[names(trainSet[-16])]
+testSet = testSet[names(trainSet[-17])]
 
 #Creating naive bayes classifier
-NBclass = naiveBayes(trainSet[-16], factor(trainSet$Class))
+NBclass = naiveBayes(trainSet[-17], factor(trainSet$Class))
 
 # Running classifier
 s = predict(NBclass, testSet, type = "raw")
@@ -53,4 +53,4 @@ example$Probability = s[,2]
 
 # Save your scores in a new submission file.
 # This assumes you have write permission to the current folder.
-write.csv(example,file='GNbayes_submission.csv',row.names=FALSE)
+write.csv(example,file='GNbayes_submission2.csv',row.names=FALSE)
