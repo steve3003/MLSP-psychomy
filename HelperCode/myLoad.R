@@ -44,17 +44,16 @@ testSet = testSet[names(trainSet[-18])]
 NBclass = naiveBayes(trainSet[-18], factor(trainSet$Class))
 
 # Running classifier
-scores = predict(NBclass, testSet, type = "raw")
-
-
+s = predict(NBclass, testSet, type = "raw")
 
 
 # SCORES MUST BE VALUES BETWEEN 0 AND 1. Do not submit labels!
 #scores = rep(1,dim(example)[1])
 
 # Enter your scored into the example dataset
-example$Probability = scores
+example$Probability = s[,2]
 
 # Save your scores in a new submission file.
 # This assumes you have write permission to the current folder.
-write.csv(example,file='new_submission.csv',row.names=FALSE)
+write.csv(example,file='Nbayes_submission.csv',row.names=FALSE)
+
