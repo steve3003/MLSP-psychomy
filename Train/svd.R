@@ -6,16 +6,20 @@ data$Class = NULL
 s = svd(data)
 
 x = 1:length(s$d)
-plot(x, y=s$d, main="singular values of D", cex=0.5, pch=18, col="blue", xlab="D dimension", ylab="Evaluation")
-lines(x, s$d, col="blue")
+energy = rep(0,length(s$d))
+for(i in x) 
+{
+  energy[i] = s$d[1:i] %*% s$d[1:i]
+}
+energy = 100 * energy / energy[length(energy)]
+plot(x, y=energy, main="Energy of singular values of D", cex=0.5, pch=18, col="blue", xlab="D dimension", ylab="% Energy")
+lines(x, energy, col="blue")
 
-x = 1:length(diff(s$d))
-plot(x, y=diff(s$d), main="derivative of singular values of D", cex=0.5, pch=18, col="blue", xlab="D dimension", ylab="Evaluation")
-lines(x, diff(s$d), col="blue")
-
-nTake = 15
-s$d[-(1:nTake)] = 0
-svd_data = data.frame(s$u %*% diag(s$d) %*% t(s$v))
+nTake = Position(function(x) x >= 90, energy)
+u = as.matrix(s$u[, 1:nTake])
+v = as.matrix(s$v[, 1:nTake])
+d = as.matrix(diag(s$d)[1:nTake, 1:nTake])
+svd_data = data.frame(u %*% d %*% t(v))
 names(svd_data) = names(data)
 svd_data$Class = class
 svd_data$Class = as.factor(svd_data$Class)
