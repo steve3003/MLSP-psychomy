@@ -1,0 +1,2 @@
+GNBayes_complete = tutti e 20 gli attributi selezionati da Flavio mercoledì
+GNBayes_ultrasel = a partire da complete ho tolto tutti quelli che venendo tolti aumentavano la ROC 

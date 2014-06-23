@@ -36,10 +36,10 @@ trainSet = read.arff("Train/data_continuos_complete.arff")
 #trainSet = trainSet[-1]
 
 testSet = merge(FNC_test, SBM_test)
-testSet = testSet[names(trainSet[-17])]
+testSet = testSet[names(trainSet[-18])]
 
 #Creating naive bayes classifier
-NBclass = naiveBayes(trainSet[-17], factor(trainSet$Class))
+NBclass = naiveBayes(trainSet[-18], factor(trainSet$Class))
 
 # Running classifier
 s = predict(NBclass, testSet, type = "raw")
