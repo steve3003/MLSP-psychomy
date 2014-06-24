@@ -1,8 +1,8 @@
 library(foreign)
 
-test = read.arff('../Test/test.arff')
-train = read.arff('../Train/svd_wrapper_NB_ROC.arff')
+test = read.arff('../Train/svd_train.arff')
+train = read.arff('../Train/data_continuos_complete-noFNC105.arff')
 
 filtered_test = test[names(train)]
 
-write.arff(filtered_test,'../Test/test_svd_wrapper_NB_ROC.arff')
+write.arff(filtered_test,'../Train/svd_data_continuos_complete-noFNC105.arff')
