@@ -30,7 +30,7 @@ library(class)
 library(e1071)
 library(foreign)
 
-trainSet = read.arff("Train/data_continuos_complete.arff")
+trainSet = read.arff("Train/data_continuos_complete-noFNC105-noOut.arff")
 #labels = read.csv("Train/train_labels.csv")
 #trainSet = merge(trainSet, labels)
 #trainSet = trainSet[-1]
@@ -53,4 +53,4 @@ example$Probability = s[,2]
 
 # Save your scores in a new submission file.
 # This assumes you have write permission to the current folder.
-write.csv(example,file='GNbayes_submission_complete.csv',row.names=FALSE)
+write.csv(example,file='submissions/GNbayes_submission_no105_noOutliers.csv',row.names=FALSE)

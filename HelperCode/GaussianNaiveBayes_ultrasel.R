@@ -30,10 +30,7 @@ library(class)
 library(e1071)
 library(foreign)
 
-trainSet = read.arff("Train/data_continuos_ultraselected.arff")
-#labels = read.csv("Train/train_labels.csv")
-#trainSet = merge(trainSet, labels)
-#trainSet = trainSet[-1]
+trainSet = read.arff("Train/data_continuos_complete-noFNC105.arff")
 
 testSet = merge(FNC_test, SBM_test)
 testSet = testSet[names(trainSet[-10])]
