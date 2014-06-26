@@ -4,7 +4,7 @@ library(e1071)
 library(foreign)
 library(pROC)
 library(tcltk)
-set = read.arff("Train/data_continuos_complete-noFNC105-noOut.arff")
+set = read.arff("Train/data_continuos_complete.arff")
 z <- vector()
 x <- 1:10000
 total <- 10000
