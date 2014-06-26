@@ -30,7 +30,7 @@ library(class)
 library(e1071)
 library(foreign)
 
-trainSet = read.arff("Train/data_continuos_complete-noFNC105.arff")
+trainSet = read.arff("Train/data_continuos_ultraselected.arff")
 
 testSet = merge(FNC_test, SBM_test)
 testSet = testSet[names(trainSet[-10])]
@@ -50,4 +50,4 @@ example$Probability = s[,2]
 
 # Save your scores in a new submission file.
 # This assumes you have write permission to the current folder.
-write.csv(example,file='GNbayes_submission_ultrasel.csv',row.names=FALSE)
+write.csv(example,file='submissions/GNbayes_submission_ultrasel.csv',row.names=FALSE)
