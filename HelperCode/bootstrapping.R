@@ -4,7 +4,7 @@ library(e1071)
 library(foreign)
 library(pROC)
 
-set = read.arff("Train/data_continuos_ultraselected.arff")
+set = read.arff("Train/CfsSubsetEval_CrosVal.arff")
 z <- vector()
 
 x <- 1:10000
