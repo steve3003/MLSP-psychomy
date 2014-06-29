@@ -1,0 +1,4 @@
+add weka.jar to CLASSPATH
+
+java weka.filters.supervised.attribute.Discretize -b -i train.arff -o disc_train.arff -r test.arff -s disc_test.arff -R first-last -precision 6 -c last
+java weka.filters.unsupervised.attribute.RemoveUseless -b -i disc_train.arff -o disc_train2.arff -r disc_test.arff -s disc_test2.arff -M 99.0
