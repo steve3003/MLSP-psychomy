@@ -2,3 +2,6 @@ add weka.jar to CLASSPATH
 
 java weka.filters.supervised.attribute.Discretize -b -i train.arff -o disc_train.arff -r test.arff -s disc_test.arff -R first-last -precision 6 -c last
 java weka.filters.unsupervised.attribute.RemoveUseless -b -i disc_train.arff -o disc_train2.arff -r disc_test.arff -s disc_test2.arff -M 99.0
+
+java weka.filters.supervised.attribute.AttributeSelection -b -i train.arff -o pca_train.arff -r test.arff -s pca_test.arff -E "weka.attributeSelection.PrincipalComponents -R 0.95 -A 5" -S "weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1" -c last
+java weka.filters.supervised.attribute.AttributeSelection -b -i pca_train.arff -o pca_train2.arff -r pca_test.arff -s pca_test2.arff -E "weka.attributeSelection.CorrelationAttributeEval " -S "weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N 10" -c last
