@@ -6,13 +6,17 @@ data$Class = NULL
 s = svd(data)
 
 x = 1:length(s$d)
+
+plot(x, y=s$d, main="Singular value of D", cex=1, pch=18, col="blue", xlab="nth singular value", ylab="value")
+lines(x, s$d, col="blue")
+
 energy = rep(0,length(s$d))
 for(i in x) 
 {
   energy[i] = s$d[1:i] %*% s$d[1:i]
 }
 energy = 100 * energy / energy[length(energy)]
-plot(x, y=energy, main="Energy of singular values of D", cex=0.5, pch=18, col="blue", xlab="D dimension", ylab="% Energy")
+plot(x, y=energy, main="Energy of singular values of D", cex=1, pch=18, col="blue", xlab="D dimension", ylab="% Energy")
 lines(x, energy, col="blue")
 
 nTake = Position(function(x) x >= 90, energy)
